@@ -162,15 +162,16 @@ class quantritin extends goc{
     }
     function ListTin($idTL ,$idLT ){
         $sql="SELECT idTin,TieuDe,TomTat,tin.AnHien, tin.lang, TinNoiBat,
-   Ngay, SoLanXem, TenTL,Ten FROM tin, loaitin, theloai 
-      WHERE tin.idLT=loaitin.idLT AND loaitin.idTL=theloai.idTL
-	  AND ($idTL=-1 OR tin.idTL=$idTL) 
-    AND ($idLT=-1 OR tin.idLT=$idLT) 
-      ORDER BY idTin Desc";
+        Ngay, SoLanXem, TenTL,Ten FROM tin, loaitin, theloai 
+           WHERE tin.idLT=loaitin.idLT AND loaitin.idTL=theloai.idTL
+           AND ($idTL=-1 OR tin.idTL=$idTL) 
+         AND ($idLT=-1 OR tin.idLT=$idLT) 
+           ORDER BY idTin Desc";
         $kq = $this->db->query($sql) ;
         if(!$kq) die( $this-> db->error);
-        return $kq;
-    }
+        return $kq; 
+     }
+     
     function LoaiTinTrongTheLoai($idTL){
         $sql="SELECT idLT,Ten FROM loaitin WHERE idTL=$idTL ORDER BY ThuTu";
         $kq = $this->db->query($sql) ;

@@ -48,7 +48,7 @@
                                 <td><?=$rowTL['ThuTu']?></td>
                                 <td><?=($rowTL['AnHien']==1)?"Đang hiện":"Đang ẩn"?></td>
                                 <td><?=$rowTL['TenTL_KhongDau']?></td>
-                                <td><?=$rowTL['lang']?></td>
+                                <td><?=($rowTL['lang']=="vi")?"Tiếng Việt":"Tiếng Anh"?></td>
                                 <td>
                                     <a href="?p=theloai_sua&idTL=<?=$rowTL['idTL']?>" class="btn bg-blue waves-effect">Cập nhật</a> &nbsp;
                                     <a href="theloai_xoa.php?idTL=<?=$rowTL['idTL']?>" class="btn bg-red waves-effect" onClick="return confirm('Xóa hả')">Xóa</a>

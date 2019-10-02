@@ -48,7 +48,7 @@
                                 <td><?=($rowLT['AnHien']==1)?"Đang hiện":"Đang ẩn"?></td>
                                 <td><?=$rowLT['Ten_KhongDau']?></td>
                                 <td><?=$rowLT['TenTL']?></td>
-                                <td><?=$rowLT['lang']?></td>
+                                <td><?=($rowLT['lang']=="vi")?"Tiếng Việt":"Tiếng Anh"?></td>
                                 <td>
                                     <a href="?p=loaitin_sua&idLT=<?=$rowLT['idLT']?>" class="btn bg-blue waves-effect">Cập nhật</a> &nbsp;
                                     <a href="loaitin_xoa.php?idLT=<?=$rowLT['idLT']?>" class="btn bg-red waves-effect" onClick="return confirm('Xóa hả')">Xóa</a>

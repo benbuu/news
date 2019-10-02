@@ -20,33 +20,36 @@ $kq = $qt->ListTin( $idTL  , $idLT );
                     <h2>
                         QUẢN TRỊ TIN
                     </h2>
+                    
                     <form method="get" action="" class="bg-info p-t-10 p-b-10 p-l-10">
                         <input name="p" type="hidden" value="tin_ds">
                         <?php $listTL= $qt->ListTheLoai();?>
-                        <select id="idTL" name="idTL" onchange="this.form.idLT.value=-1; this.form.submit();">
-                            <option value=-1>Chọn thể loại</option>
-                            <?php while ($r= $listTL->fetch_assoc()){ ?>
-                                <?php if ($r['idTL']==$_GET['idTL']) { ?>
-                                    <option value="<?=$r['idTL']?>" selected> <?=$r['TenTL']?> </option>
-                                <?php } else {?>
-                                    <option value="<?=$r['idTL']?>"> <?=$r['TenTL']?> </option>
-                                <?php } ?>
-                            <?php } ?>
+                        <select class="btn btn-success" id="idTL" name="idTL" onchange="this.form.idLT.value=-1; this.form.submit();">
+                        <option value=-1>Chọn thể loại</option>
+                        <?php while ($r= $listTL->fetch_assoc()){ ?>
+                        <?php if ($r['idTL']==$_GET['idTL']) { ?>
+                        <option value="<?=$r['idTL']?>" selected> <?=$r['TenTL']?> </option>
+                        <?php } else {?>
+                        <option value="<?=$r['idTL']?>"> <?=$r['TenTL']?> </option>
+                        <?php } ?>
+                        <?php } ?>
                         </select>
 
                         <?php $listLT= $qt->ListLoaiTin();?>
-                        <select id="idLT" name="idLT" onchange="this.form.idTL.value=-1; this.form.submit();">
-                            <option value=-1>Chọn loại tin</option>
-                            <?php while ($r= $listLT->fetch_assoc()){ ?>
-                                <?php if ($r['idLT']==$_GET['idLT']) { ?>
-                                    <option value="<?=$r['idLT']?>" selected> <?=$r['Ten']?> </option>
-                                <?php } else {?>
-                                    <option value="<?=$r['idLT']?>">  <?=$r['Ten']?> </option>
-                                <?php } //if ?>
-                            <?php } //while ?>
+                        <select class="btn btn-primary" id="idLT" name="idLT" onchange="this.form.idTL.value=-1; this.form.submit();">
+                        <option value=-1>Chọn loại tin</option>
+                        <?php while ($r= $listLT->fetch_assoc()){ ?>
+                            <?php if ($r['idLT']==$_GET['idLT']) { ?>
+                            <option value="<?=$r['idLT']?>" selected> <?=$r['Ten']?> </option>
+                            <?php } else {?>
+                            <option value="<?=$r['idLT']?>">  <?=$r['Ten']?> </option>
+                            <?php } //if ?>
+                        <?php } //while ?>
                         </select>
 
                     </form>
+
+                    
 
                     <ul class="header-dropdown m-r--5">
                         <li class="dropdown">
